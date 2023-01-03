@@ -4,6 +4,7 @@ import Activity from '../Activity/Activity';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
+import List from '../List/List';
 
 const Club = () => {
     const [activities, setActivities] = useState([]);
@@ -49,8 +50,7 @@ const Club = () => {
                 </div>
             </div>
             <div className="bg-white">
-                <h4>list Summary</h4>
-                <p>listed activities:{list.length}</p>
+                <List list={list}></List>
             </div>
         </div>
 
