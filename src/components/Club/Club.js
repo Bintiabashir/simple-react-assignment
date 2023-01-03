@@ -7,12 +7,21 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
 const Club = () => {
     const [activities, setActivities] = useState([]);
+    const [list, setList] = useState([]);
 
     useEffect(() => {
         fetch('activities.json')
             .then(res => res.json())
             .then(data => setActivities(data))
     }, [])
+
+    const handleAddToList = (activity) => {
+        const newList = [...list, activity];
+        setList(newList);
+    }
+
+
+
     return (
 
         <div className="grid grid-cols-5">
@@ -34,12 +43,14 @@ const Club = () => {
                         activities.map(activity => <Activity
                             key={activity.id}
                             activity={activity}
+                            handleAddToList={handleAddToList}
                         ></Activity>)
                     }
                 </div>
             </div>
             <div className="bg-white">
                 <h4>list Summary</h4>
+                <p>listed activities:{list.length}</p>
             </div>
         </div>
 
