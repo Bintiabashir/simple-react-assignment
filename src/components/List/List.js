@@ -18,13 +18,20 @@ const List = ({ list }) => {
     }
 
     return (
-        <div className='sticky top-0 py-7 '>
+        <div className='sticky top-0 py-7 mx-auto text-center'>
             <Profile></Profile>
             <Break handleShowToList={handleShowToList} breakTimes={breakTimes}></Break>
-            <p>listed activities:{list.length}</p>
-            <h2>Exercise Details</h2>
-            <p>Exercise time: {totalTime} minutes</p>
-            <p>Break time: {breakTime} minutes</p>
+
+
+            <h2 className='my-4 font-bold text-red-700 pt-3 text-lg'>Activities Details</h2>
+
+            <div className="py-3 bg-rose-100 rounded-lg py-2 m-1 mr-2 text-rose-900">
+
+                <p className='font-semibold'>Total Activities time:</p>
+                <p className='font-medium text-red-400 text-lg pb-2'> {totalTime} minutes</p>
+
+                <p className='font-semibold'>Break time: <span className='font-medium text-red-400 text-lg pb-2'>{breakTime} minutes</span></p>
+            </div>
 
         </div>
     );

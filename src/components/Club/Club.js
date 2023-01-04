@@ -25,9 +25,9 @@ const Club = () => {
 
     return (
 
-        <div className="grid grid-cols-5">
+        <div className="grid lg:grid-cols-5 grid-cols-4">
 
-            <div className="col-span-4">
+            <div className="lg:col-span-4 col-span-3 ">
 
                 <div className=' text-center'>
 
@@ -39,7 +39,7 @@ const Club = () => {
                     <h3 className='text-red-700'>Select your kids creative activities</h3>
                 </div>
 
-                <div className=" grid grid-cols-3 gap-5 m-7 mt-5">
+                <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 m-7 mt-5">
                     {
                         activities.map(activity => <Activity
                             key={activity.id}
