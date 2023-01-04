@@ -25,9 +25,9 @@ const Club = () => {
 
     return (
 
-        <div className="grid lg:grid-cols-5 grid-cols-4">
+        <div className="grid lg:grid-cols-5 md:grid-cols-4 ">
 
-            <div className="lg:col-span-4 col-span-3 ">
+            <div className="lg:col-span-4 md:col-span-3 ">
 
                 <div className=' text-center'>
 
@@ -49,7 +49,7 @@ const Club = () => {
                     }
                 </div>
             </div>
-            <div className="bg-white">
+            <div className="bg-white md:inline">
                 <List list={list}></List>
             </div>
         </div>
