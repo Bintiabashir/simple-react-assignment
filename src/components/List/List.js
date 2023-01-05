@@ -5,6 +5,7 @@ import Profile from '../Profile/Profile';
 
 const List = ({ list }) => {
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const times = [5, 10, 15, 20, 25];
 
     const [time, setTime] = useState(0);
@@ -34,14 +35,14 @@ const List = ({ list }) => {
     }
 
     return (
-        <div className='sticky top-0 py-7 mx-auto text-center'>
+        <div className='sticky top-0 py-7 lg:py-4 mx-auto text-center'>
             <Profile></Profile>
             <Break handleShowToList={handleShowToList} times={times}></Break>
 
 
-            <h2 className='my-4 font-bold text-red-700 pt-3 text-lg'>Activities Details</h2>
+            <h2 className='my-4 font-bold text-red-700 pt-3 lg:pt-0 text-lg'>Activities Details</h2>
 
-            <div className="py-3 bg-rose-100 rounded-lg py-2 m-1 mr-2 text-rose-900">
+            <div className="py-3 bg-rose-100 rounded-lg py-2 m-1 mb-4 mr-2 text-rose-900">
 
                 <p className='font-semibold'>Total Activities time:</p>
                 <p className='font-medium text-red-400 text-lg pb-2'> {totalActivityTime} minutes</p>
@@ -49,6 +50,7 @@ const List = ({ list }) => {
                 <p className='font-semibold'>Break time: <span className='font-medium text-red-400 text-lg pb-2'>{time} minutes</span></p>
             </div>
 
+            <button className=' btn-secondary btn mt-4 mb-3 lg:mb-0'>Activity Completed</button>
         </div>
     );
 };
