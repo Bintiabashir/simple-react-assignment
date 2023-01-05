@@ -1,4 +1,4 @@
-const addToDb = time => {
+const addToDb = breakTime => {
     let breakTimes;
 
     const storedTime = localStorage.getItem('break-times');
@@ -8,18 +8,28 @@ const addToDb = time => {
     else {
         breakTimes = {}
     }
-    const quantity = breakTimes[time];
-
+    const quantity = breakTimes[breakTime];
     if (quantity) {
 
         const newQuantity = quantity + 1;
-        breakTimes[time] = newQuantity;
+        breakTimes[breakTime] = newQuantity;
     }
     else {
-
-        breakTimes[time] = 1;
+        breakTimes[breakTime] = 1;
     }
+
     localStorage.setItem('break-times', JSON.stringify(breakTimes));
 }
 
-export { addToDb }
+const getStoredTime = () => {
+    let breakTimes = {};
+
+    const storedTime = localStorage.getItem('break-times');
+    if (storedTime) {
+        breakTimes = JSON.parse(storedTime);
+    }
+
+    return breakTimes;
+}
+
+export { addToDb, getStoredTime }

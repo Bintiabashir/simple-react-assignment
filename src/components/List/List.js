@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { addToDb } from '../../utilities/fakedb';
+import React, { useEffect, useState } from 'react';
+import { addToDb, getStoredTime } from '../../utilities/fakedb';
 import Break from '../Break/Break';
 import Profile from '../Profile/Profile';
 
@@ -9,7 +9,21 @@ const List = ({ list }) => {
 
     const [time, setTime] = useState(0);
 
+    useEffect(() => {
+
+        const storedTime = getStoredTime();
+        for (let breakTime in storedTime) {
+            breakTime = (JSON.parse(breakTime))
+            const addedTime = times.find(time => time === breakTime);
+            if (addedTime) {
+                setTime(addedTime);
+            }
+
+        }
+    }, [times])
+
     const handleShowToList = (time) => {
+        localStorage.clear();
         setTime(time);
         addToDb(time);
     }
