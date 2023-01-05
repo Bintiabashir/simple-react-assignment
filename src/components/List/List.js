@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { addToDb, getStoredTime } from '../../utilities/fakedb';
 import Break from '../Break/Break';
 import Profile from '../Profile/Profile';
+import { ToastContainer, toast } from 'react-toastify';
 
 const List = ({ list }) => {
+    const notify = () => toast("Congratulations! You are done with your activities.");
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const times = [5, 10, 15, 20, 25];
@@ -50,7 +52,8 @@ const List = ({ list }) => {
                 <p className='font-semibold'>Break time: <span className='font-medium text-red-400 text-lg pb-2'>{time} minutes</span></p>
             </div>
 
-            <button className=' btn-secondary btn mt-4 mb-3 lg:mb-0'>Activity Completed</button>
+            <button onClick={notify} className=' btn-secondary btn mt-4 mb-3 lg:mb-0'>Activity Completed</button>
+            <ToastContainer />
         </div>
     );
 };
