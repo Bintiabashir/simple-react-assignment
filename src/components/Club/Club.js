@@ -5,6 +5,7 @@ import Activity from '../Activity/Activity';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import List from '../List/List';
+import QuestionAnswer from '../QuestionsAnswers/QuestionAnswer';
 
 const Club = () => {
     const [activities, setActivities] = useState([]);
@@ -47,6 +48,9 @@ const Club = () => {
                             handleAddToList={handleAddToList}
                         ></Activity>)
                     }
+                </div>
+                <div className="hidden md:grid">
+                    <QuestionAnswer></QuestionAnswer>
                 </div>
             </div>
             <div className="bg-white md:inline">
