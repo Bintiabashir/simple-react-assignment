@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import QuestionAnswer from '../QuestionsAnswers/QuestionAnswer';
 
 const List = ({ list }) => {
-    const notify = () => toast("Congratulations! You are done with your activities.");
+    const notify = () => toast.success("Congratulations! You are done with your activities.");
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const times = [5, 10, 15, 20, 25];
