@@ -12,7 +12,7 @@ const Profile = () => {
                 <p className='pb-2'>
                     <small className='font-medium'><FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon> Dhaka,Bangladesh</small>
                 </p>
-                <p className='pb-2'><small className='text-xs text-red-800'>I'm very comfortable with being productive. I like making creative things.</small></p>
+                <p className='pb-2'><small className='text-sm text-red-800'>I'm very comfortable with being productive. I like making creative things.</small></p>
             </div>
         </div>
     );
