@@ -27,7 +27,6 @@ const List = ({ list }) => {
     }, [times])
 
     const handleShowToList = (time) => {
-        localStorage.clear();
         setTime(time);
         addToDb(time);
     }

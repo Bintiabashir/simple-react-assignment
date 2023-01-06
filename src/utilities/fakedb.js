@@ -3,7 +3,7 @@ const addToDb = breakTime => {
 
     const storedTime = localStorage.getItem('break-times');
     if (storedTime) {
-        breakTimes = JSON.parse(storedTime);
+        breakTimes = (JSON.parse(storedTime));
     }
     else {
         breakTimes = {}
@@ -13,8 +13,17 @@ const addToDb = breakTime => {
 
         const newQuantity = quantity + 1;
         breakTimes[breakTime] = newQuantity;
+
+        breakTime = (JSON.stringify(breakTime));
+        const keys = Object.keys(breakTimes);
+        let restTimeString = keys.filter(rt => rt !== breakTime);
+        const restTimes = restTimeString.map(parseFloat);
+        restTimes.forEach(restTime =>
+            delete breakTimes[restTime]
+        );
     }
     else {
+        breakTimes = {};
         breakTimes[breakTime] = 1;
     }
 
